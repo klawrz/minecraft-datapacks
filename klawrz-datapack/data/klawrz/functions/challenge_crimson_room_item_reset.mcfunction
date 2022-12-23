@@ -1,0 +1,1 @@
+execute at @e[tag=crimson_room__item_reset] as @e[type=item, distance=..50] run kill @s

@@ -1,0 +1,1 @@
+particle minecraft:composter ~ ~ ~ 0.1 0.8 0.1 1 1 force @a
