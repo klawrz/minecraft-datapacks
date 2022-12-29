@@ -161,6 +161,9 @@ execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_04, d
 # Handle maze
 execute as @p[scores={challenge.crimson_room.init=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run function klawrz:challenge_saffron_maze
 
+# Handle rails
+execute as @p[scores={challenge.crimson_room.init=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run function klawrz:challenge_saffron_rails
+
 
 #
 # # # # # # # # #
