@@ -15,26 +15,26 @@
 #
 
 # Particle effect
-execute at @e[tag=warp_stand] run function klawrz:warp_particle
+execute at @e[tag=warp_stand] run function klawrz:particles/warp_particle
 
 # Play warp sound to surrounding players when someone uses warp
 #notworking
-#execute at @e[tag=warp_stand, limit=1] as @p[distance=..0.5] run function klawrz:warp_sound
+#execute at @e[tag=warp_stand, limit=1] as @p[distance=..0.5] run function klawrz:sfx/sfx_warp
 
 # Warp to Moria
-execute at @e[tag=to_moria] as @p[distance=..0.5] run function klawrz:warp_moria
+execute at @e[tag=to_moria] as @p[distance=..0.5] run function klawrz:warps/warp_moria
 
 # Warp to PVP Hub
-execute at @e[tag=to_pvp_hub] as @p[distance=..0.5] run function klawrz:warp_pvp_hub
+execute at @e[tag=to_pvp_hub] as @p[distance=..0.5] run function klawrz:warps/warp_pvp_hub
 
 # Warp to PVP Hub 2nd floor
-execute at @e[tag=to_pvp_hub__floor_2] as @p[distance=..0.5] run function klawrz:warp_pvp_hub_floor_2
+execute at @e[tag=to_pvp_hub__floor_2] as @p[distance=..0.5] run function klawrz:warps/warp_pvp_hub_floor_2
 
 # Warp to Trials
-execute at @e[tag=to_trials] as @p[distance=..0.5] run function klawrz:warp_trials
+execute at @e[tag=to_trials] as @p[distance=..0.5] run function klawrz:warps/warp_trials
 
 # Warp to Arena Towers
-execute at @e[tag=to_arena_towers] as @p[distance=..0.5] run function klawrz:warp_arena_towers
+execute at @e[tag=to_arena_towers] as @p[distance=..0.5] run function klawrz:warps/warp_arena_towers
 
 
 
@@ -46,10 +46,10 @@ execute at @e[tag=to_arena_towers] as @p[distance=..0.5] run function klawrz:war
 #
 
 # warp to PVP Hub
-execute at @e[tag=moria_warp_hub__warp] as @p[distance=..0.5] if entity @e[tag=moria_warp_frame, nbt={ItemRotation: 4b}] run function klawrz:warp_pvp_hub
+execute at @e[tag=moria_warp_hub__warp] as @p[distance=..0.5] if entity @e[tag=moria_warp_frame, nbt={ItemRotation: 4b}] run function klawrz:warps/warp_pvp_hub
 
 # warp to Doozza Village
-execute at @e[tag=moria_warp_hub__warp] as @p[distance=..0.5] if entity @e[tag=moria_warp_frame, nbt={ItemRotation: 5b}] run function klawrz:warp_doozza_village
+execute at @e[tag=moria_warp_hub__warp] as @p[distance=..0.5] if entity @e[tag=moria_warp_frame, nbt={ItemRotation: 5b}] run function klawrz:warps/warp_doozza_village
 
 
 #
@@ -59,7 +59,7 @@ execute at @e[tag=moria_warp_hub__warp] as @p[distance=..0.5] if entity @e[tag=m
 #
 
 # Initiate the Crimson Room challenge
-execute at @e[tag=trial_dial_warp] as @p[distance=..0.5] if entity @e[tag=trial_dial_frame, nbt={ItemRotation: 0b}] unless entity @a[scores={challenge.crimson_room.init=1}] run function klawrz:challenge_crimson_room_init
+execute at @e[tag=trial_dial_warp] as @p[distance=..0.5] if entity @e[tag=trial_dial_frame, nbt={ItemRotation: 0b}] unless entity @a[scores={challenge.crimson_room.init=1}] run function klawrz:challenges/crimson_room/crimson_room_init
 
 #
 #
@@ -82,7 +82,7 @@ execute at @e[tag=trial_dial_warp] as @p[distance=..0.5] if entity @e[tag=trial_
 scoreboard players enable @a challenge.exit
 
 # Exit trial
-execute as @a[scores={challenge.exit=1..}] run function klawrz:challenge_exit
+execute as @a[scores={challenge.exit=1..}] run function klawrz:challenges/challenge_exit
 
 
 
@@ -97,7 +97,7 @@ execute as @a[scores={challenge.exit=1..}] run function klawrz:challenge_exit
 execute as @a[scores={health=0}] run scoreboard players reset @a challenge.crimson_room.init
 
 # Run 'complete' function when red candles lit
-execute at @e[tag=crimson_candle_marker] as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=0}] if block ~ ~ ~ red_candle[candles=3,lit=true] run function klawrz:challenge_crimson_room_complete
+execute at @e[tag=crimson_candle_marker] as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=0}] if block ~ ~ ~ red_candle[candles=3,lit=true] run function klawrz:challenges/crimson_room/crimson_room/crimson_room_complete
 
 # Kill crimson door stands
 execute as @e[tag=crimson_door] at @s if entity @p[distance=..1.5,nbt={SelectedItem:{tag:{Tag:["crimson_key"]}}}] run kill @s
@@ -139,10 +139,10 @@ execute as @e[tag=cobalt_door] at @s if entity @p[distance=..1.5,nbt={SelectedIt
 #
 
 # Handle arrow shooting
-execute at @p[scores={challenge.crimson_room.init=1}] as @e[distance=..50, type=minecraft:arrow, nbt={inGround: 1b}] run function klawrz:challenge_viridian_bow
+execute at @p[scores={challenge.crimson_room.init=1}] as @e[distance=..50, type=minecraft:arrow, nbt={inGround: 1b}] run function klawrz:challenges/crimson_room/viridian_room/viridian_bow
 
 # Run 'complete' function when green candles lit
-execute at @e[tag=viridian_candle_marker] as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=0}] if block ~ ~ ~ green_candle[candles=4,lit=true] if block ~ ~ ~-1 green_candle[candles=4,lit=true] run function klawrz:challenge_viridian_room_complete
+execute at @e[tag=viridian_candle_marker] as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=0}] if block ~ ~ ~ green_candle[candles=4,lit=true] if block ~ ~ ~-1 green_candle[candles=4,lit=true] run function klawrz:challenges/crimson_room/viridian_room/viridian_room_complete
 
 
 
@@ -159,13 +159,13 @@ execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_03, d
 execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_04, dx=1, dz=1] run summon minecraft:glow_item_frame ~1 ~ ~1 {Tags:["saffron_frame_04", "crimson_room__needs_reset"], Facing: 1b}
 
 # Handle maze
-execute as @p[scores={challenge.crimson_room.init=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run function klawrz:challenge_saffron_maze
+execute as @p[scores={challenge.crimson_room.init=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run function klawrz:challenges/crimson_room/saffron_room/saffron_maze
 
 # Handle rails
-execute as @p[scores={challenge.crimson_room.init=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run function klawrz:challenge_saffron_rails
+execute as @p[scores={challenge.crimson_room.init=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run function klawrz:challenges/crimson_room/saffron_room/saffron_rails
 
 # Run 'complete' function when green candles lit
-execute at @e[tag=saffron_candle_marker] as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] if block ~ ~ ~ yellow_candle[candles=4,lit=true] run function klawrz:challenge_saffron_room_complete
+execute at @e[tag=saffron_candle_marker] as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] if block ~ ~ ~ yellow_candle[candles=4,lit=true] run function klawrz:challenges/crimson_room//saffron_room/saffron_room_complete
 
 
 

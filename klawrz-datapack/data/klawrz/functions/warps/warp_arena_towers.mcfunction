@@ -6,4 +6,4 @@ title @s subtitle "Towers"
 tp @s @e[tag=ne_tower_stand, limit=1]
 
 # Play warp sound
-execute at @e[tag=ne_tower_stand] run function klawrz:warp_sound
+execute at @e[tag=ne_tower_stand] run function klawrz:sfx/sfx_warp

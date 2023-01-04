@@ -6,4 +6,4 @@ title @s subtitle "Village"
 tp @s @e[tag=doozza_village__port, limit=1]
 
 # Play warp sound
-execute at @e[tag=doozza_village__port] run function klawrz:warp_sound
+execute at @e[tag=doozza_village__port] run function klawrz:sfx/sfx_warp

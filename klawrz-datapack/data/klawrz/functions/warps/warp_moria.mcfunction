@@ -9,4 +9,4 @@ title @s subtitle "Warp Hub"
 tp @s @e[tag=moria_warp_hub__port, limit=1]
 
 # Play warp sound
-execute at @e[tag=moria_warp_hub__port] run function klawrz:warp_sound
+execute at @e[tag=moria_warp_hub__port] run function klawrz:sfx/sfx_warp

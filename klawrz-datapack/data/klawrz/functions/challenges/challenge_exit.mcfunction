@@ -8,4 +8,4 @@ execute as @p[scores={challenge.exit=1.., challenge.crimson_room.init=1}] run sc
 scoreboard players reset @a[scores={challenge.exit=1..}] challenge.exit
 
 # Warp to PVP Hub
-function klawrz:warp_pvp_hub
+function klawrz:warps/warp_pvp_hub

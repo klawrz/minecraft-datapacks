@@ -24,10 +24,10 @@ execute at @e[tag=origin__crimson_room] if entity @s[scores={challenge.crimson_r
 execute at @e[tag=cobalt_candle_marker] run setblock ~ ~-1 ~-1 observer[facing=south, powered=true]
 
 # Destroy any items that drop as a result of resetting the challenge
-schedule function klawrz:challenge_crimson_room_item_reset 2s
+schedule function klawrz:challenges/crimson_room/crimson_room_item_reset 2s
 
 # Give exit trial book
-function klawrz:challenge_exit_book
+function klawrz:challenges/challenge_exit_book
 
 # Warp player to challenge
-function klawrz:warp_crimson_room
+function klawrz:warps/warp_crimson_room
