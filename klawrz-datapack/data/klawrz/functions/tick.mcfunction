@@ -86,29 +86,48 @@ execute as @a[scores={challenge.exit=1..}] run function klawrz:challenges/challe
 
 
 
-
 #
-# # # # # # # # #
-# Crimson  Room #
-# # # # # # # # #
+#
+# #
+# # # # # # # # # # # # # #
+# #  Crimson Room  Trial  #
+# # # # # # # # # # # # # #
+# #
+#
 #
 
-# Player no longer active in trial on death
+# Player no longer active in trials on death
 execute as @a[scores={health=0}] run scoreboard players reset @a challenge.crimson_room.init
-
-# Run 'complete' function when red candles lit
-execute at @e[tag=crimson_candle_marker] as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=0}] if block ~ ~ ~ red_candle[candles=3,lit=true] run function klawrz:challenges/crimson_room/crimson_room/crimson_room_complete
-
-# Kill crimson door stands
-execute as @e[tag=crimson_door] at @s if entity @p[distance=..1.5,nbt={SelectedItem:{tag:{Tag:["crimson_key"]}}}] run kill @s
 
 # Kill dropped item frames
 execute at @e[tag=crimson_room__item_reset] as @e[type=item,nbt={Item: {id:"minecraft:item_frame"}},distance=..30] run kill @s
 execute at @e[tag=crimson_room__item_reset] as @e[type=item,nbt={Item: {id:"minecraft:glow_item_frame"}},distance=..30] run kill @s
 
 # Handle item frames
+# 
+# # Crimson frames
 execute at @e[tag=crimson_frame_marker] unless entity @e[tag=crimson_frame] run summon minecraft:item_frame ~ ~ ~ {Tags:["crimson_frame", "crimson_room__needs_reset"], Facing: 4b}
+# # Saffron frames
+execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_01, dx=0, dz=0] run summon minecraft:glow_item_frame ~ ~ ~ {Tags:["saffron_frame_01", "crimson_room__needs_reset"], Facing: 1b}
+execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_02, dx=1, dz=0] run summon minecraft:glow_item_frame ~1 ~ ~ {Tags:["saffron_frame_02", "crimson_room__needs_reset"], Facing: 1b}
+execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_03, dx=0, dz=1] run summon minecraft:glow_item_frame ~ ~ ~1 {Tags:["saffron_frame_03", "crimson_room__needs_reset"], Facing: 1b}
+execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_04, dx=1, dz=1] run summon minecraft:glow_item_frame ~1 ~ ~1 {Tags:["saffron_frame_04", "crimson_room__needs_reset"], Facing: 1b}
 
+# Handle bucket placement
+execute as @p[scores={challenge.crimson_room.init=1}] if entity @s[nbt={SelectedItem: {id:"minecraft:bucket"}}] unless entity @s[nbt={SelectedItem: {tag: {Tags: ["cobalt_room_empty_bucket"]}}}] run item replace entity @s weapon.mainhand with minecraft:bucket{Tags: ["cobalt_room_empty_bucket"], CanPlaceOn: ["minecraft:water", "minecraft:chest[waterlogged=true]", "minecraft:blue_candle[waterlogged=true]"], HideFlags: 16}
+execute as @p[scores={challenge.crimson_room.init=1}] if entity @s[nbt={SelectedItem: {id:"minecraft:water_bucket"}}] unless entity @s[nbt={SelectedItem: {tag: {Tags: ["cobalt_room_bucket"]}}}] run item replace entity @s weapon.mainhand with minecraft:water_bucket{Tags: ["cobalt_room_bucket"], CanPlaceOn: ["minecraft:warped_stem", "minecraft:blue_concrete", "minecraft:blue_concrete_powder", "minecraft:blue_stained_glass", "minecraft:blue_glazed_terracotta", "minecraft:chest", "minecraft:blue_bed", "minecraft:blue_carpet"], HideFlags: 16}
+
+# Handle arrow shooting
+execute at @p[scores={challenge.crimson_room.init=1}] as @e[distance=..50, type=minecraft:arrow, nbt={inGround: 1b}] run function klawrz:challenges/crimson_room/viridian_room/viridian_bow
+
+
+#
+# # # # # # # # #
+# Crimson  Room #
+# # # # # # # # #
+#
+# Handle Crimson Room
+execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=0}] run function klawrz:challenges/crimson_room/crimson_room/handle_crimson_room
 
 
 #
@@ -116,20 +135,8 @@ execute at @e[tag=crimson_frame_marker] unless entity @e[tag=crimson_frame] run 
 #  Cobalt Room  #
 # # # # # # # # #
 #
-
-# Handle bucket placement
-execute as @p[scores={challenge.crimson_room.init=1}] if entity @s[nbt={SelectedItem: {id:"minecraft:bucket"}}] unless entity @s[nbt={SelectedItem: {tag: {Tags: ["cobalt_room_empty_bucket"]}}}] run item replace entity @s weapon.mainhand with minecraft:bucket{Tags: ["cobalt_room_empty_bucket"], CanPlaceOn: ["minecraft:water", "minecraft:chest[waterlogged=true]", "minecraft:blue_candle[waterlogged=true]"], HideFlags: 16}
-execute as @p[scores={challenge.crimson_room.init=1}] if entity @s[nbt={SelectedItem: {id:"minecraft:water_bucket"}}] unless entity @s[nbt={SelectedItem: {tag: {Tags: ["cobalt_room_bucket"]}}}] run item replace entity @s weapon.mainhand with minecraft:water_bucket{Tags: ["cobalt_room_bucket"], CanPlaceOn: ["minecraft:warped_stem", "minecraft:blue_concrete", "minecraft:blue_concrete_powder", "minecraft:blue_stained_glass", "minecraft:blue_glazed_terracotta", "minecraft:chest", "minecraft:blue_bed", "minecraft:blue_carpet"], HideFlags: 16}
-
-# Handle salmon spawning
-execute at @e[tag=cobalt_salmon_marker] as @p[distance=..10, scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=0}] unless entity @e[type=minecraft:salmon, distance=..8] run summon minecraft:salmon ~ ~ ~ {Attributes:[{Name:"generic.movement_speed", Base: 3.0d}], Health: 0.1f, PersistenceRequired: 1b, Tags:["crimson_room__needs_reset"]}
-
-# Run 'complete' function when blue candles lit
-execute at @e[tag=cobalt_candle_marker] as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=0}] if block ~ ~ ~ blue_candle[candles=4,lit=true] run function klawrz:challenge_cobalt_room_complete
-
-# Kill cobalt door stands
-execute as @e[tag=cobalt_door] at @s if entity @p[distance=..1.5,nbt={SelectedItem:{tag:{Tag:["cobalt_key"]}}}] run kill @s
-
+# Handle Cobalt Room
+execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.challenge_cobalt_room_complete=0}] run function klawrz:challenges/crimson_room/cobalt_room/handle_cobalt_room
 
 
 #
@@ -137,13 +144,8 @@ execute as @e[tag=cobalt_door] at @s if entity @p[distance=..1.5,nbt={SelectedIt
 # Viridian Room #
 # # # # # # # # #
 #
-
-# Handle arrow shooting
-execute at @p[scores={challenge.crimson_room.init=1}] as @e[distance=..50, type=minecraft:arrow, nbt={inGround: 1b}] run function klawrz:challenges/crimson_room/viridian_room/viridian_bow
-
-# Run 'complete' function when green candles lit
-execute at @e[tag=viridian_candle_marker] as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=0}] if block ~ ~ ~ green_candle[candles=4,lit=true] if block ~ ~ ~-1 green_candle[candles=4,lit=true] run function klawrz:challenges/crimson_room/viridian_room/viridian_room_complete
-
+# Handle Viridian Room
+execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.challenge_cobalt_room_complete=1, challenge.viridian_room.complete=0}] run function klawrz:challenges/crimson_room/viridian_room/handle_viridian_room
 
 
 #
@@ -151,22 +153,8 @@ execute at @e[tag=viridian_candle_marker] as @p[scores={challenge.crimson_room.i
 # Saffron  Room #
 # # # # # # # # #
 #
-
-# Handle item frames
-execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_01, dx=0, dz=0] run summon minecraft:glow_item_frame ~ ~ ~ {Tags:["saffron_frame_01", "crimson_room__needs_reset"], Facing: 1b}
-execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_02, dx=1, dz=0] run summon minecraft:glow_item_frame ~1 ~ ~ {Tags:["saffron_frame_02", "crimson_room__needs_reset"], Facing: 1b}
-execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_03, dx=0, dz=1] run summon minecraft:glow_item_frame ~ ~ ~1 {Tags:["saffron_frame_03", "crimson_room__needs_reset"], Facing: 1b}
-execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_04, dx=1, dz=1] run summon minecraft:glow_item_frame ~1 ~ ~1 {Tags:["saffron_frame_04", "crimson_room__needs_reset"], Facing: 1b}
-
-# Handle maze
-execute as @p[scores={challenge.crimson_room.init=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run function klawrz:challenges/crimson_room/saffron_room/saffron_maze
-
-# Handle rails
-execute as @p[scores={challenge.crimson_room.init=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run function klawrz:challenges/crimson_room/saffron_room/saffron_rails
-
-# Run 'complete' function when green candles lit
-execute at @e[tag=saffron_candle_marker] as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] if block ~ ~ ~ yellow_candle[candles=4,lit=true] run function klawrz:challenges/crimson_room//saffron_room/saffron_room_complete
-
+# Handle Saffron Room
+execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.challenge_cobalt_room_complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run function klawrz:challenges/crimson_room/saffron_room/handle_saffron_room
 
 
 #
@@ -174,3 +162,5 @@ execute at @e[tag=saffron_candle_marker] as @p[scores={challenge.crimson_room.in
 # Amethyst Room #
 # # # # # # # # #
 #
+# Handle Amethyst Room
+execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.challenge_cobalt_room_complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=1, challenge.amethyst_room.complete=0}] run function klawrz:challenges/crimson_room/amethyst_room/handle_amethyst_room
