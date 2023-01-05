@@ -136,7 +136,7 @@ execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.comp
 # # # # # # # # #
 #
 # Handle Cobalt Room
-execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.challenge_cobalt_room_complete=0}] run function klawrz:challenges/crimson_room/cobalt_room/handle_cobalt_room
+execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=0}] run function klawrz:challenges/crimson_room/cobalt_room/handle_cobalt_room
 
 
 #
@@ -145,7 +145,7 @@ execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.comp
 # # # # # # # # #
 #
 # Handle Viridian Room
-execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.challenge_cobalt_room_complete=1, challenge.viridian_room.complete=0}] run function klawrz:challenges/crimson_room/viridian_room/handle_viridian_room
+execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=0}] run function klawrz:challenges/crimson_room/viridian_room/handle_viridian_room
 
 
 #
@@ -154,7 +154,7 @@ execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.comp
 # # # # # # # # #
 #
 # Handle Saffron Room
-execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.challenge_cobalt_room_complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run function klawrz:challenges/crimson_room/saffron_room/handle_saffron_room
+execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run function klawrz:challenges/crimson_room/saffron_room/handle_saffron_room
 
 
 #
@@ -163,4 +163,4 @@ execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.comp
 # # # # # # # # #
 #
 # Handle Amethyst Room
-execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.challenge_cobalt_room_complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=1, challenge.amethyst_room.complete=0}] run function klawrz:challenges/crimson_room/amethyst_room/handle_amethyst_room
+execute as @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=1, challenge.amethyst_room.complete=0}] run function klawrz:challenges/crimson_room/amethyst_room/handle_amethyst_room
