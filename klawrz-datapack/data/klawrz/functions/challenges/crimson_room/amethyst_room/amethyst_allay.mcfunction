@@ -4,6 +4,9 @@ tag @s add has_duplicated
 # Tag the duplicate allay so it gets deleted
 tag @e[type=allay, distance=..50] add crimson_room__needs_reset
 
+# Make sure allays are silent when they die
+data merge entity @e[limit=1, type=allay, tag=!has_duplicated] {Silent: 1b}
+
 # Audible feedback that something was unlocked
 function klawrz:sfx/sfx_complete
 
