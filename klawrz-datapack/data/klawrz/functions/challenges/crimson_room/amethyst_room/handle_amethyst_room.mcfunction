@@ -9,3 +9,6 @@ execute if score @s entities matches 2 as @e[tag=amethyst_allay] unless entity @
 
 # Detect both purple flowers
 execute as @e[tag=amethyst_flowerpot_marker] as @s[tag=!done] at @s if block ~ ~ ~ minecraft:potted_allium if block ~3 ~ ~ minecraft:potted_allium run function klawrz:challenges/crimson_room/amethyst_room/amethyst_flowerpot
+
+# Detect all 4 chorus flowers
+execute as @e[tag=amethyst_chorus_marker] as @s[tag=!done] at @s if block ~ ~ ~ chorus_plant if block ~3 ~ ~ chorus_plant if block ~ ~ ~3 chorus_plant if block ~3 ~ ~3 chorus_plant run function klawrz:challenges/crimson_room/amethyst_room/amethyst_chorus
