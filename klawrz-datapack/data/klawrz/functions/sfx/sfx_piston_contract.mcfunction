@@ -1,0 +1,1 @@
+playsound block.piston.contract ambient @a ~ ~ ~
