@@ -1,5 +1,5 @@
 # Tag marker to prevent function firing again
-tag @s add done
+tag @s add done_chorus
 
 # Audible success feedback
 function klawrz:sfx/sfx_complete
