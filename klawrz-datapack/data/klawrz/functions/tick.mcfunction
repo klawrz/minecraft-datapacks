@@ -58,6 +58,9 @@ execute as @a[scores={health=0}] run scoreboard players reset @a challenge.crims
 execute at @e[tag=crimson_room__item_reset] as @e[type=item,nbt={Item: {id:"minecraft:item_frame"}},distance=..30] run kill @s
 execute at @e[tag=crimson_room__item_reset] as @e[type=item,nbt={Item: {id:"minecraft:glow_item_frame"}},distance=..30] run kill @s
 
+# Kill dropped paintings
+execute at @e[tag=crimson_room__item_reset] as @e[type=item,nbt={Item: {id:"minecraft:painting"}},distance=..30] run kill @s
+
 # Handle item frames
 # 
 # # Crimson frames
