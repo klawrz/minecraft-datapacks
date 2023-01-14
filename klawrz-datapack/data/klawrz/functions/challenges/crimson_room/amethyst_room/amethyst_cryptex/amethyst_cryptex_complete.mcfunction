@@ -6,3 +6,6 @@ function klawrz:sfx/sfx_complete
 
 # Open passage
 fill ~-1 ~-1 ~1 ~-1 ~4 ~-10 air
+
+# Turn on lights in Memory room
+execute at @e[tag=amethyst_memory_marker] run place template minecraft:amethyst_memory_lights

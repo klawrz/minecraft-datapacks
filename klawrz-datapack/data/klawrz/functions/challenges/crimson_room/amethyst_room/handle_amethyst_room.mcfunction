@@ -1,5 +1,7 @@
 # Prevent Allay leaving room
-execute at @e[tag=saffron_door_marker] as @e[tag=amethyst_allay, dx=3, dy=3, dz=1] run tp @s ~3 ~5 ~-5
+execute at @e[tag=saffron_door_marker] as @e[tag=amethyst_allay, dx=3, dy=3, dz=1] run tag @s add out
+execute at @e[tag=saffron_door_marker] as @e[tag=out] run tp @s ~3 ~5 ~-5
+execute as @e[tag=out] run tag @s remove out
 
 # Detect allay duplication
 execute at @e[tag=amethyst_allay_marker] store result score @s entities if entity @e[type=allay, distance=..50]
@@ -16,5 +18,6 @@ execute as @e[tag=amethyst_chorus_marker] as @s[tag=!done_chorus] at @s if block
 # Handle cryptex
 execute as @e[tag=amethyst_cryptex_marker] as @s[tag=!done_cryptex] at @s run function klawrz:challenges/crimson_room/amethyst_room/amethyst_cryptex/handle_amethyst_cryptex
 
-# Amethyst Skeleton template
-#execute as Aerms at @s run summon minecraft:wither_skeleton ~ ~ ~ {Invulnerable: 1b, Silent: 1b, PersistenceRequired: 1b, Rotation: [-90.0f, 60.0f], NoAI: 1b, ArmorItems: [{}, {}, {}, {id: "minecraft:budding_amethyst", Count: 1b}], HandItems: [{id: "minecraft:budding_amethyst", Count: 1b},{id: "minecraft:budding_amethyst", Count: 1b}], Tags: ["amethyst_skeleton","crimson_room__needs_reset"]}
+# Handle memory game
+execute as @e[tag=amethyst_memory_marker] as @s[tag=!done_memory] at @e[tag=amethyst_skeleton] as @p[distance=..0.5] at @s as @e[tag=amethyst_skeleton, distance=..0.5] run function klawrz:challenges/crimson_room/amethyst_room/amethyst_memory/handle_amethyst_memory
+
