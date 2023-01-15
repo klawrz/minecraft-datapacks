@@ -18,10 +18,20 @@ execute at @e[tag=origin__crimson_room] if entity @s[scores={challenge.crimson_r
 execute at @e[tag=origin__crimson_room] if entity @s[scores={challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] run place template minecraft:saffron_room ~1 ~1 ~1
 execute at @e[tag=origin__crimson_room] if entity @s[scores={challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=1, challenge.amethyst_room.complete=0}] run place template minecraft:amethyst_room ~1 ~1 ~1
 
-# Observers facing solid blocks must be placed after the room is placed or they will activate
+# Reset mini challenge scores
 #
-# Use Cobalt candle marker for ease since it is next to the observer
-execute at @e[tag=cobalt_candle_marker] run setblock ~ ~-1 ~-1 observer[facing=south, powered=true]
+# # Amethyst Allays
+scoreboard players set #allays entities 0
+#
+# # Amethyst Memory
+scoreboard players set #mem challenge.amethyst_memory 0
+scoreboard players set #flip challenge.amethyst_memory.flip 0
+#
+# # Amethyst Cryptex
+scoreboard players set amethyst_cryptex_01 challenge.amethyst_cryptex 0
+scoreboard players set amethyst_cryptex_02 challenge.amethyst_cryptex 0
+scoreboard players set amethyst_cryptex_03 challenge.amethyst_cryptex 0
+scoreboard players set amethyst_cryptex_04 challenge.amethyst_cryptex 0
 
 # Destroy any items that drop as a result of resetting the challenge
 schedule function klawrz:challenges/crimson_room/crimson_room_item_reset 2s
