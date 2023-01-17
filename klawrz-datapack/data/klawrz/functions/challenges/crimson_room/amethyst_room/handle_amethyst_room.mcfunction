@@ -1,5 +1,5 @@
 # Prevent Allay leaving room
-execute at @e[tag=saffron_door_marker] as @e[tag=amethyst_allay, dx=3, dy=3, dz=1] run tag @s add out
+execute at @e[tag=saffron_door_marker] as @e[tag=amethyst_allay, dx=10, dy=10, dz=0] run tag @s add out
 execute at @e[tag=saffron_door_marker] as @e[tag=out] run tp @s ~3 ~5 ~-5
 execute as @e[tag=out] run tag @s remove out
 
@@ -21,3 +21,5 @@ execute as @e[tag=amethyst_cryptex_marker] as @s[tag=!done_cryptex] at @s run fu
 # Handle memory game
 execute as @e[tag=amethyst_memory_marker] as @s[tag=!done_memory] at @e[tag=amethyst_skeleton] as @p[distance=..0.5] at @s as @e[tag=amethyst_skeleton, distance=..0.5] run function klawrz:challenges/crimson_room/amethyst_room/amethyst_memory/handle_amethyst_memory
 
+# Handle Shortcut
+execute as @e[tag=amethyst_shortcut_marker] as @s[tag=!done_shortcut] at @s if block ~ ~ ~ birch_door[open=false] run function klawrz:challenges/crimson_room/amethyst_room/amethyst_shortcut
