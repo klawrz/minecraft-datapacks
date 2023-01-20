@@ -11,6 +11,7 @@ execute store success score #bool bool run data modify storage minecraft:amethys
 #
 # # Match
 execute if score #bool bool matches 0 run scoreboard players add #mem challenge.amethyst_memory 2
+execute if score #bool bool matches 0 run function klawrz:sfx/sfx_happy
 #
 # # No match
 execute as @e[tag=amethyst_skeleton] if score #bool bool matches 1 run function klawrz:challenges/crimson_room/amethyst_room/amethyst_memory/amethyst_memory_reset
