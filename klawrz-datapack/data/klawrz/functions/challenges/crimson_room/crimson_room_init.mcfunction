@@ -28,13 +28,13 @@ scoreboard players set #mem challenge.amethyst_memory 0
 scoreboard players set #flip challenge.amethyst_memory.flip 0
 #
 # # Amethyst Cryptex
-scoreboard players set amethyst_cryptex_01 challenge.amethyst_cryptex 0
-scoreboard players set amethyst_cryptex_02 challenge.amethyst_cryptex 0
-scoreboard players set amethyst_cryptex_03 challenge.amethyst_cryptex 0
-scoreboard players set amethyst_cryptex_04 challenge.amethyst_cryptex 0
+scoreboard players set #amethyst_cryptex_01 challenge.amethyst_cryptex 0
+scoreboard players set #amethyst_cryptex_02 challenge.amethyst_cryptex 0
+scoreboard players set #amethyst_cryptex_03 challenge.amethyst_cryptex 0
+scoreboard players set #amethyst_cryptex_04 challenge.amethyst_cryptex 0
 
-# Destroy any items that drop as a result of resetting the challenge
-schedule function klawrz:challenges/crimson_room/crimson_room_item_reset 2s
+# Destroy any items that drop as a result of resetting the challenge, as well as any key item being brought into the challenge
+schedule function klawrz:challenges/crimson_room/crimson_room_item_reset 1s
 
 # Give exit trial book
 function klawrz:challenges/challenge_exit_book
