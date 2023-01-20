@@ -23,3 +23,9 @@ execute as @e[tag=amethyst_memory_marker] as @s[tag=!done_memory] at @e[tag=amet
 
 # Handle Shortcut
 execute as @e[tag=amethyst_shortcut_marker] as @s[tag=!done_shortcut] at @s if block ~ ~ ~ birch_door[open=false] run function klawrz:challenges/crimson_room/amethyst_room/amethyst_shortcut
+
+# Handle Candle
+execute as @e[tag=amethyst_candle_marker] as @s[tag=!done_candle] at @s if block ~ ~ ~ purple_candle[candles=4, lit=true] if block ~1 ~ ~ purple_candle[candles=4, lit=true] if block ~ ~ ~1 purple_candle[candles=4, lit=true] if block ~1 ~ ~1 purple_candle[candles=4, lit=true] run function klawrz:challenges/crimson_room/amethyst_room/amethyst_candle
+
+# Handle Potion
+execute as @e[tag=amethyst_rod_marker] as @s[tag=!done_rod] at @s run function klawrz:challenges/crimson_room/amethyst_room/amethyst_potion
