@@ -21,4 +21,4 @@ execute as @s[tag=sethead_iron] as @s[tag=!flipped] run function klawrz:challeng
 execute as @s[tag=sethead_netherite] as @s[tag=!flipped] run function klawrz:challenges/crimson_room/amethyst_room/amethyst_memory/amethyst_memory_netherite
 
 # Track completion
-execute if score #mem challenge.amethyst_memory matches 12 as @e[tag=amethyst_memory_marker] run function klawrz:challenges/crimson_room/amethyst_room/amethyst_memory/amethyst_memory_complete
+execute as @e[tag=amethyst_memory_marker] at @s if score #mem challenge.amethyst_memory matches 12 run function klawrz:challenges/crimson_room/amethyst_room/amethyst_memory/amethyst_memory_complete
