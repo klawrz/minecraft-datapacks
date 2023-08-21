@@ -29,3 +29,7 @@ execute as @e[tag=amethyst_candle_marker] as @s[tag=!done_candle] at @s if block
 
 # Handle Potion
 execute as @e[tag=amethyst_rod_marker] as @s[tag=!done_rod] at @s run function klawrz:challenges/crimson_room/amethyst_room/amethyst_potion
+
+# Handle portal
+execute as @e[tag=saffron_frame_marker] as @s[tag=!tagged_portal] at @s if entity @e[tag=saffron_frame_01, nbt={ItemRotation: 1b, Item: {tag: {SaffronKey:1b}}}, dx=0, dz=0] if entity @e[tag=saffron_frame_02, nbt={ItemRotation: 7b, Item: {tag: {SaffronKey:1b}}}, dx=1, dz=0] if entity @e[tag=saffron_frame_03, nbt={ItemRotation: 5b, Item: {tag: {SaffronKey:1b}}}, dx=0, dz=1] if entity @e[tag=saffron_frame_04, nbt={ItemRotation: 1b, Item: {tag: {SaffronKey:1b}}}, dx=1, dz=1] run tag @s add tagged_portal
+execute as @e[tag=tagged_portal] at @s run function klawrz:challenges/exit_portal
