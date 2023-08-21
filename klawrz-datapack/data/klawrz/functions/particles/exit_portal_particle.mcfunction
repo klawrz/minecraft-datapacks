@@ -1,0 +1,2 @@
+execute at @e[tag=saffron_frame_marker] run particle minecraft:enchant ~0.5 ~1 ~0.5 0.4 2 0.4 1 200 force @a
+execute at @e[tag=saffron_frame_marker] run particle minecraft:dripping_obsidian_tear ~0.5 ~1 ~0.5 0.4 2 0.4 1 200 force @a
