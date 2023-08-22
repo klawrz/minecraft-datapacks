@@ -2,7 +2,7 @@
 # ender pearls, chain mail shirt, honey, enchanted golden apple, potions, enchanted book, reinforced deepslate, music disc: 13, glazed terracotta
 
 # Amethyst mining pick
-# /give @s minecraft:golden_pickaxe{HideFlags: 10, CanDestroy: ["minecraft:amethyst_cluster"], Damage: 100, display: {Name: '{"text":"Busted Gem Pick","color":"light_purple"}', Lore: ['{"text":"Purple crusty residue","color":"dark_gray"}', '{"text":"is caked to the side","color":"dark_gray"}']}}
+# /give @s minecraft:golden_pickaxe{HideFlags: 10, CanDestroy: ["minecraft:amethyst_cluster"], Damage: 33, display: {Name: '{"text":"Busted Gem Pick","color":"light_purple"}', Lore: ['{"text":"Purple crusty residue","color":"dark_gray"}', '{"text":"is caked to the side","color":"dark_gray"}']}}
 
 # Track that player has completed room
 scoreboard players set @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=1, challenge.cobalt_room.complete=1, challenge.viridian_room.complete=1, challenge.saffron_room.complete=0}] challenge.saffron_room.complete 1
