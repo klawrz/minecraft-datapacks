@@ -28,6 +28,7 @@ To load the puzzle into your game, follow these steps:
 TODO:
 
 - Amethyst Room is not complete in existing previous structures. Need to redefine the structure files, working backwards
+- Make sure portal rods have reset
 - Separate Mines of Moria map stuff from datapack file
 - Update datapack to only contain escape room content
 - Make a structure that contains the warp stand
