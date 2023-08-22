@@ -78,6 +78,8 @@ execute as @p[scores={challenge.crimson_room.init=1}] if entity @s[nbt={Selected
 # Handle arrow shooting
 execute at @p[scores={challenge.crimson_room.init=1}] as @e[distance=..50, type=minecraft:arrow, nbt={inGround: 1b}] run function klawrz:challenges/crimson_room/viridian_room/viridian_bow
 
+# Handle target placement incase it dies by fire
+execute at @e[tag=viridian_target_marker] unless block ~ ~ ~ target run setblock ~ ~ ~ target
 
 #
 # # # # # # # # #
