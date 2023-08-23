@@ -1,6 +1,9 @@
 # Player is active in Crimson Room challenge
 scoreboard players set @s challenge.crimson_room.init 1
 
+# Ensure gamemode is set to Adventure
+gamemode adventure @s
+
 # Destroy all entities before placing them again
 kill @e[tag=crimson_room__needs_reset]
 
