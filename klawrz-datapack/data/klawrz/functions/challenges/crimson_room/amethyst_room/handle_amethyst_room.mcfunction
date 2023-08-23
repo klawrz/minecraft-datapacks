@@ -1,3 +1,13 @@
+# Markers (and tags they receive)
+# - Amethyst Allay (has_duplicated) (this is the actual Allay entity flying around)
+# - Amethyst Allay Marker (doesn't receive tags)
+# - Amethyst Flowerpot Marker (done_flowerpot)
+# - Amethyst Chorus Marker (done_chorus)
+# - Amethyst Cryptex Marker (done_cryptex)
+# - Amethyst Memory Marker (done_memory)
+# - Amethyst Candle Marker (done_candle)
+# - Amethyst Rod Marker (done_rod)
+
 # Prevent Allay leaving room
 execute at @e[tag=saffron_door_marker] as @e[tag=amethyst_allay, dx=10, dy=10, dz=0] run tag @s add out
 execute at @e[tag=saffron_door_marker] as @e[tag=out] run tp @s ~3 ~5 ~-5

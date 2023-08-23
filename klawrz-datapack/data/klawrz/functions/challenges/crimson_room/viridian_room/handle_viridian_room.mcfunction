@@ -1,3 +1,8 @@
+# Markers (and tags they receive):
+# - Viridian Forcefield Marker (done_forcefield)
+# - Viridian Target Marker
+# - Viridian Candle Marker
+
 # Handle forcefield
 execute as @e[tag=viridian_forcefield_marker] as @s[tag=!done_forcefield] at @s if block ~ ~ ~ warped_pressure_plate[powered=true] if block ~-1 ~-7 ~1 warped_pressure_plate[powered=true] run function klawrz:challenges/crimson_room/viridian_room/viridian_forcefield
 

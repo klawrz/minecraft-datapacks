@@ -1,3 +1,9 @@
+# Markers (and tags they receive):
+# - Saffron Maze Marker
+# - Saffron Rails Marker
+# - Saffron Frame Marker (tagged_portal)
+# - Saffron Candle Marker
+
 # Handle maze
 function klawrz:challenges/crimson_room/saffron_room/saffron_maze
 

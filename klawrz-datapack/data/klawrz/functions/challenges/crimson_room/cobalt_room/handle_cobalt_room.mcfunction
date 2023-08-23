@@ -1,3 +1,8 @@
+# Markers (and tags they receive):
+# - Cobalt Candle Marker (done_bucket, done_aquarium)
+# - Cobalt Salmon Marker
+# - Cobalt Campfire Marker (done_campfire)
+
 # Handle bucket chest
 execute as @e[tag=cobalt_candle_marker] as @s[tag=!done_bucket] at @s if block ~-8 ~-1 ~ blue_candle[candles=4, lit=true, waterlogged=false] run function klawrz:challenges/crimson_room/cobalt_room/cobalt_bucket
 
@@ -6,6 +11,9 @@ execute as @e[tag=cobalt_candle_marker] as @s[tag=!done_aquarium] at @s if block
 
 # Handle salmon spawning
 execute at @e[tag=cobalt_salmon_marker] as @p[distance=..10] unless entity @e[type=minecraft:salmon, distance=..8] run summon minecraft:salmon ~ ~ ~ {Attributes:[{Name:"generic.movement_speed", Base: 3.0d}], Health: 0.1f, PersistenceRequired: 1b, Tags:["crimson_room__needs_reset"]}
+
+# Handle bone meal drops
+execute at @e[tag=cobalt_salmon_marker] run kill @e[type=item, nbt={Item: {id:"minecraft:bone_meal"}}, distance=..15]
 
 # Handle campfire
 execute as @e[tag=cobalt_campfire_marker] as @s[tag=!done_campfire] at @s if block ~ ~ ~ minecraft:soul_campfire{CookingTimes: [I; 600, 600, 600, 600]} run function klawrz:challenges/crimson_room/cobalt_room/cobalt_campfire
