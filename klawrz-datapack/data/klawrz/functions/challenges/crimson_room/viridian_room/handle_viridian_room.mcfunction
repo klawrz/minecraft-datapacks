@@ -1,5 +1,6 @@
 # Markers (and tags they receive):
 # - Viridian Flowerpot Marker (done_flowerpot)
+# - Viridian Door Marker (done_sculk)
 # - Viridian Forcefield Marker (done_forcefield)
 # - Viridian Target Marker
 # - Viridian Candle Marker
