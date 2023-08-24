@@ -4,6 +4,9 @@ tag @s add done_campfire
 # Prevent additional salmon spawning
 tag @e[tag=cobalt_salmon_marker] add done_salmon
 
+# Replace barrier at top of bubble elevator
+execute at @e[tag=cobalt_salmon_marker] run setblock ~ ~7 ~-3 blue_stained_glass
+
 # Audible success feedback
 function klawrz:sfx/sfx_complete
 
