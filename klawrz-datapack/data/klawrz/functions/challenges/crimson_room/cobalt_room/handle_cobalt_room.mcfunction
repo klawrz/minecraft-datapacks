@@ -1,6 +1,6 @@
 # Markers (and tags they receive):
 # - Cobalt Candle Marker (done_bucket, done_aquarium)
-# - Cobalt Salmon Marker
+# - Cobalt Salmon Marker (done_salmon)
 # - Cobalt Campfire Marker (done_campfire)
 
 # Handle bucket chest
