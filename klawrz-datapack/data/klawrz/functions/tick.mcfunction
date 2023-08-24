@@ -61,6 +61,9 @@ execute at @e[tag=crimson_room__item_reset] as @e[type=item,nbt={Item: {id:"mine
 # Kill dropped paintings
 execute at @e[tag=crimson_room__item_reset] as @e[type=item,nbt={Item: {id:"minecraft:painting"}},distance=..30] run kill @s
 
+# Make bone meal drops placeable
+execute at @e[tag=crimson_room__item_reset] as @e[type=item, nbt={Item: {id:"minecraft:bone_meal"}}, distance=..30] run data merge entity @s {Item: {tag: {HideFlags: 16, CanPlaceOn: ["minecraft:twisting_vines"]}}}
+
 # Handle item frames
 # 
 # # Crimson frames
