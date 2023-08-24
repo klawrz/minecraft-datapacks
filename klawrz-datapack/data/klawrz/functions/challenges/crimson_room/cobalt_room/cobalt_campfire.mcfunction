@@ -1,6 +1,9 @@
 # Prevent function from firing again
 tag @s add done_campfire
 
+# Prevent additional salmon spawning
+tag @e[tag=cobalt_salmon_marker] add done_salmon
+
 # Audible success feedback
 function klawrz:sfx/sfx_complete
 
