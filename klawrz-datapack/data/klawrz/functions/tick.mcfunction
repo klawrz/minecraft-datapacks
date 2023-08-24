@@ -62,7 +62,7 @@ execute at @e[tag=crimson_room__item_reset] as @e[type=item,nbt={Item: {id:"mine
 execute at @e[tag=crimson_room__item_reset] as @e[type=item,nbt={Item: {id:"minecraft:painting"}},distance=..30] run kill @s
 
 # Make bone meal drops placeable
-execute at @e[tag=crimson_room__item_reset] as @e[type=item, nbt={Item: {id:"minecraft:bone_meal"}}, distance=..30] run data merge entity @s {Item: {tag: {HideFlags: 16, CanPlaceOn: ["minecraft:twisting_vines"]}}}
+execute at @e[tag=crimson_room__item_reset] as @e[type=item, nbt={Item: {id:"minecraft:bone_meal"}}, distance=..30] run data merge entity @s {Item: {tag: {CrimsonRoomNeedsReset: 1b, HideFlags: 16, CanPlaceOn: ["minecraft:twisting_vines"]}}}
 
 # Handle item frames
 # 
@@ -75,8 +75,8 @@ execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_03, d
 execute at @e[tag=saffron_frame_marker] unless entity @e[tag=saffron_frame_04, dx=1, dz=1] run summon minecraft:glow_item_frame ~1 ~ ~1 {Tags:["saffron_frame_04", "crimson_room__needs_reset"], Facing: 1b}
 
 # Handle bucket placement
-execute as @p[scores={challenge.crimson_room.init=1}] if entity @s[nbt={SelectedItem: {id:"minecraft:bucket"}}] unless entity @s[nbt={SelectedItem: {tag: {Tags: ["cobalt_room_empty_bucket"]}}}] run item replace entity @s weapon.mainhand with minecraft:bucket{Tags: ["cobalt_room_empty_bucket"], CanPlaceOn: ["minecraft:water", "minecraft:chest[waterlogged=true]", "minecraft:blue_candle[waterlogged=true]"], HideFlags: 16}
-execute as @p[scores={challenge.crimson_room.init=1}] if entity @s[nbt={SelectedItem: {id:"minecraft:water_bucket"}}] unless entity @s[nbt={SelectedItem: {tag: {Tags: ["cobalt_room_bucket"]}}}] run item replace entity @s weapon.mainhand with minecraft:water_bucket{Tags: ["cobalt_room_bucket"], CanPlaceOn: ["minecraft:warped_stem", "minecraft:blue_concrete", "minecraft:blue_concrete_powder", "minecraft:blue_stained_glass", "minecraft:blue_glazed_terracotta", "minecraft:chest", "minecraft:blue_bed", "minecraft:blue_carpet"], HideFlags: 16}
+execute as @p[scores={challenge.crimson_room.init=1}] if entity @s[nbt={SelectedItem: {id:"minecraft:bucket"}}] unless entity @s[nbt={SelectedItem: {tag: {CobaltEmptyBucket: 1b}}}] run item replace entity @s weapon.mainhand with minecraft:bucket{CobaltEmptyBucket: 1b, CrimsonRoomNeedsReset: 1b, CanPlaceOn: ["minecraft:water", "minecraft:chest[waterlogged=true]", "minecraft:blue_candle[waterlogged=true]"], HideFlags: 16}
+execute as @p[scores={challenge.crimson_room.init=1}] if entity @s[nbt={SelectedItem: {id:"minecraft:water_bucket"}}] unless entity @s[nbt={SelectedItem: {tag: {CobaltWaterBucket: 1b}}}] run item replace entity @s weapon.mainhand with minecraft:water_bucket{CobaltWaterBucket: 1b, CrimsonRoomNeedsReset: 1b, CanPlaceOn: ["minecraft:warped_stem", "minecraft:blue_concrete", "minecraft:blue_concrete_powder", "minecraft:blue_stained_glass", "minecraft:blue_glazed_terracotta", "minecraft:chest", "minecraft:blue_bed", "minecraft:blue_carpet"], HideFlags: 16}
 
 # Handle arrow shooting
 execute at @p[scores={challenge.crimson_room.init=1}] as @e[distance=..50, type=minecraft:arrow, nbt={inGround: 1b}] run function klawrz:challenges/crimson_room/viridian_room/viridian_bow
