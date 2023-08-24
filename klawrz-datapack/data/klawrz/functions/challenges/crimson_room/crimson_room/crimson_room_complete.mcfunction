@@ -12,8 +12,9 @@ execute as @e[tag=crimson_candle_marker] at @s run setblock ~1 ~-1 ~-4 chest[fac
 
 
 
-# Candle chest
-# setblock ~ ~2 ~ chest[facing=west]{Items:[{Slot: 13b, id:"minecraft:red_candle", Count:1b, tag: {CanPlaceOn: ["minecraft:stripped_crimson_hyphae"], HideFlags: 16, display: {Name: '{"text":"Crimson Wax Candle","color":"red"}' }}}]} replace
+# Candle template
+# red_candle{HideFlags: 16, CanPlaceOn: ["minecraft:stripped_crimson_hyphae"], display: {Name: '{"text":"Crimson Wax Candle","color":"red"}'}, CrimsonRoomNeedsReset: 1b}
 
-# Lighter chest
+# Lighter template
+# flint_and_steel{CrimsonRoomNeedsReset: 1b, HideFlags: 16, CanPlaceOn: ["minecraft:red_candle", "minecraft:blue_candle", "minecraft:green_candle", "minecraft:yellow_candle", "minecraft:purple_candle", "minecraft:soul_campfire"], display: {Name: '{"text":"Lighter"}', Lore:['{"text":"For lighting things on fire", "color":"dark_gray"}']}}
 # setblock ~ ~2 ~ chest[facing=east]{Items:[{Slot: 12b, id:"minecraft:flint_and_steel", Count: 1b, tag: {CanPlaceOn: ["minecraft:red_candle"], HideFlags: 16} },{Slot: 13b, id:"minecraft:red_candle", Count: 1b, tag: {CanPlaceOn: ["minecraft:stripped_crimson_hyphae"], HideFlags: 16, display: {Name: '{"text":"Crimson Wax Candle","color":"red"}' }} }]} replace

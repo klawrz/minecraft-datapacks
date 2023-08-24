@@ -15,3 +15,9 @@ execute as @e[tag=crimson_door] at @s if entity @p[distance=..1.5,nbt={SelectedI
 # Door stand template
 # 3 in a row, in the center of a block. The first one in the row will be at .3, the second one at .5, the third one at .7
 # nbt: {Invulnerable: 1b, Invisible: 1b, NoBasePlate: 1b, Rotation: [0.0f, 0.0f], Tags: ["crimson_door", "crimson_room__needs_reset"]}
+
+# Sponge template
+# sponge{CrimsonRoomNeedsReset: 1b, HideFlags: 16, CanPlaceOn: ["minecraft:blue_candle[waterlogged=true]"]}
+
+# Redstone Dust template
+# redstone{CrimsonRoomNeedsReset: 1b, HideFlags: 16, CanPlaceOn: ["minecraft:sculk"]}

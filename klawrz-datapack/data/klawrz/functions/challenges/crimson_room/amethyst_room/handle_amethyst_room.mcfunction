@@ -43,3 +43,9 @@ execute as @e[tag=amethyst_rod_marker] as @s[tag=!done_rod] at @s run function k
 # Handle portal
 execute as @e[tag=saffron_frame_marker] as @s[tag=!tagged_portal] at @s if entity @e[tag=saffron_frame_01, nbt={ItemRotation: 1b, Item: {tag: {SaffronKey:1b}}}, dx=0, dz=0] if entity @e[tag=saffron_frame_02, nbt={ItemRotation: 7b, Item: {tag: {SaffronKey:1b}}}, dx=1, dz=0] if entity @e[tag=saffron_frame_03, nbt={ItemRotation: 5b, Item: {tag: {SaffronKey:1b}}}, dx=0, dz=1] if entity @e[tag=saffron_frame_04, nbt={ItemRotation: 1b, Item: {tag: {SaffronKey:1b}}}, dx=1, dz=1] run tag @s add tagged_portal
 execute as @e[tag=tagged_portal] at @s run function klawrz:challenges/exit_portal
+
+# Music disc template
+# music_disc_11{CrimsonRoomNeedsReset: 1b, HideFlags: 16, CanPlaceOn: ["minecraft:jukebox"]}
+
+# Lead/leash template
+# lead{CrimsonRoomNeedsReset: 1b}

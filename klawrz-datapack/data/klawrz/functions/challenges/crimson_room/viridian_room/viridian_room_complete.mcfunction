@@ -14,18 +14,19 @@ execute at @e[tag=viridian_candle_marker] run setblock ~ ~ ~ chest[facing=north]
 execute at @e[tag=viridian_door_marker] run fill ~ ~ ~ ~ ~1 ~1 air
 
 # Tell the player that a door opened somewhere
-tellraw @p[scores={challenge.crimson_room.init=1}] "A door opens somewhere."
+tellraw @p[scores={challenge.crimson_room.init=1}] "A passage opens somewhere."
 
 
 
 
 # Bow
-# give Klawrz bow{Damage: 360, display: {Name: '{"text":"Shoddy Bowman\'s Bow"}', Lore: ['{"text":"Too stringy, not bowie enough","color":"dark_gray"}']}, Tags: ["viridian_bow"], Count: 1b}
+# give Klawrz bow{Damage: 330, CrimsonRoomNeedsReset: 1b, display: {Name: '{"text":"Shoddy Bowman\'s Bow"}', Lore: ['{"text":"Too stringy, not bowie enough","color":"dark_gray"}']}, Count: 1b}
 
 # Fishing rod / Grappling hook
 # give Klawrz fishing_rod{display: {Name: '{"text":"Broken Grappling Hook","color":"gold"}', Lore: ['{"text":"Too busted to transport","color":"dark_gray"}', '{"text":"you anywhere.","color":"dark_gray"}', '{"text":""}', '{"text":"Maybe you can repair","color":"dark_gray"}', '{"text":"this somehow...","color":"dark_gray"}']}, Tags: ["viridian_rod", "broken_grappling_hook"], Count: 1b}
 
-
+# Candle template
+# green_candle{HideFlags: 16, CanPlaceOn: ["minecraft:stripped_warped_stem"], display: {Name: '{"text":"Viridian Wax Candle","color":"green"}'}, CrimsonRoomNeedsReset: 1b}
 
 
 
