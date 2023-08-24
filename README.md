@@ -24,6 +24,9 @@ To load the puzzle into your game, follow these steps:
  
 - Determine where you want the warp station to be for warping in and out of the trial
   - Place the warp zone origin structure
+ 
+- Prevent command output in chat
+  - run command: /gamerule commandBlockOutput false
 
 TODO:
 
