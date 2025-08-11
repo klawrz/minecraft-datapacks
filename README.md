@@ -30,6 +30,19 @@ To load the puzzle into your game, follow these steps:
 
 TODO:
 
+- Amethyst Room
+  - Cryptex
+    - First click of each button should move that arrow clockwise (displaying Right arrow) or counterclockwise (Left arrow)
+  - Memory
+    - Decrease volume of 'lose' sfx
+  - Potion/Rod
+    - rod was a little hard to break
+    - Remove rod from potion chest
+  - Portal
+    - Check that portal clues make sense (I think the 4th one is accidentally in position 3)
+    - Portal SFX
+    - some kind of glow/pulsing effect too?
+
 - Complete puzzle from crimson room onwards + save each new room as you access it
 - Make sure the puzzle flows correctly all the way through
 - Finish the exit portal
