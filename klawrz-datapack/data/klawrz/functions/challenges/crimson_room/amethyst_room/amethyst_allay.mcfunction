@@ -7,7 +7,7 @@ tag @e[type=allay, distance=..50] add crimson_room__needs_reset
 # Make sure allays are silent when they die
 data merge entity @e[limit=1, type=allay, tag=!has_duplicated] {Silent: 1b}
 
-# Audible feedback that something was unlocked
+# Audible success feedback
 function klawrz:sfx/sfx_complete
 
 # Raise stairs on either side of room

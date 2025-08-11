@@ -20,3 +20,6 @@ execute as @s[tag=button_05_powered] if block ~4 ~ ~-1 crimson_button[powered=fa
 
 # Win condition
 execute as @e[tag=amethyst_cryptex_marker] as @s[tag=!done_cryptex] at @s if block ~ ~ ~ magenta_glazed_terracotta[facing=south] if block ~1 ~ ~ magenta_glazed_terracotta[facing=west] if block ~2 ~ ~ magenta_glazed_terracotta[facing=north] if block ~3 ~ ~ magenta_glazed_terracotta[facing=east] if block ~4 ~ ~ magenta_glazed_terracotta[facing=east] run function klawrz:challenges/crimson_room/amethyst_room/amethyst_cryptex/amethyst_cryptex_complete
+
+# Solution
+#  v v < ^ >
