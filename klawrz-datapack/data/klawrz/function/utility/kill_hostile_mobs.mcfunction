@@ -1,0 +1,7 @@
+kill @e[type=spider, distance=..50]
+kill @e[type=zombie, distance=..50]
+kill @e[type=skeleton, distance=..50]
+kill @e[type=creeper, distance=..50]
+kill @e[type=enderman, distance=..50]
+kill @e[type=slime, distance=..50]
+kill @e[type=zombified_piglin, distance=..50]

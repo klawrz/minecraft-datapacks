@@ -1,0 +1,9 @@
+# Display titles
+title @s title "PVP Arena"
+title @s subtitle "Towers (Coming Soon)"
+
+# Warp player to destination
+tp @s @e[tag=ne_tower_stand, limit=1]
+
+# Play warp sound
+execute at @e[tag=ne_tower_stand] run function klawrz:sfx/sfx_warp

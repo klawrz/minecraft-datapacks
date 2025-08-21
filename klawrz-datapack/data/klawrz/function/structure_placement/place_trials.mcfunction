@@ -1,0 +1,1 @@
+execute as @e[tag=origin__trials] at @s run place template klawrz:pvp_hub/trials/trials ~ ~ ~

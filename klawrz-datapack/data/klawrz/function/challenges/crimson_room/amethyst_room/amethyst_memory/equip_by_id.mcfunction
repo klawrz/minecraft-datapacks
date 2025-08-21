@@ -1,0 +1,7 @@
+# id → block mapping
+execute if score @s challenge.amethyst_memory matches 1 run data merge entity @s {equipment:{head:{id:"minecraft:iron_block",count:1},mainhand:{id:"minecraft:iron_block",count:1},offhand:{id:"minecraft:iron_block",count:1}}}
+execute if score @s challenge.amethyst_memory matches 2 run data merge entity @s {equipment:{head:{id:"minecraft:gold_block",count:1},mainhand:{id:"minecraft:gold_block",count:1},offhand:{id:"minecraft:gold_block",count:1}}}
+execute if score @s challenge.amethyst_memory matches 3 run data merge entity @s {equipment:{head:{id:"minecraft:diamond_block",count:1},mainhand:{id:"minecraft:diamond_block",count:1},offhand:{id:"minecraft:diamond_block",count:1}}}
+execute if score @s challenge.amethyst_memory matches 4 run data merge entity @s {equipment:{head:{id:"minecraft:emerald_block",count:1},mainhand:{id:"minecraft:emerald_block",count:1},offhand:{id:"minecraft:emerald_block",count:1}}}
+execute if score @s challenge.amethyst_memory matches 5 run data merge entity @s {equipment:{head:{id:"minecraft:copper_block",count:1},mainhand:{id:"minecraft:copper_block",count:1},offhand:{id:"minecraft:copper_block",count:1}}}
+execute if score @s challenge.amethyst_memory matches 6 run data merge entity @s {equipment:{head:{id:"minecraft:netherite_block",count:1},mainhand:{id:"minecraft:netherite_block",count:1},offhand:{id:"minecraft:netherite_block",count:1}}}

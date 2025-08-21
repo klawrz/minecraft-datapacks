@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "click_clerk": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:interaction",
+          "nbt": "{Tags:[\"treasury_clerk\"]}"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "klawrz:treasury/try_redeem"
+  },
+  "sends_telemetry_event": false
+}

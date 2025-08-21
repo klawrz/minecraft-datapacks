@@ -1,0 +1,17 @@
+# Crimson Room reward
+# blaze rod, netherwart, name tag, chain mail helmet, obsidian, nether quartz ore, music disc: chirp, glazed terracotta
+
+# Track that player has completed room
+scoreboard players set @p[scores={challenge.crimson_room.init=1, challenge.crimson_room.complete=0}] challenge.crimson_room.complete 1
+
+# Play sounds to give feedback that something happened
+function klawrz:sfx/sfx_complete
+
+# Spawn reward chest
+#execute as @e[tag=crimson_candle_marker] at @s run setblock ~1 ~-1 ~-4 chest[facing=south]{Items:[{Slot:13b,id:"minecraft:tripwire_hook",count:1,components:{"minecraft:custom_name":{"text":"Crimson Key","color":"red"},"minecraft:lore":[{"text":"Can be used to escape","color":"dark_gray"},{"text":"the Crimson Room","color":"dark_gray"}],"minecraft:custom_data":{CrimsonKey:1b,CrimsonRoomNeedsReset:1b}}},{Slot:18b,id:"minecraft:blaze_rod",count:8,components:{"minecraft:lore":[{"text":"A reward for completing","color":"dark_gray"},{"text":"the Crimson Room trial","color":"dark_gray"}]}},{Slot:19b,id:"minecraft:nether_wart",count:16,components:{"minecraft:lore":[{"text":"A reward for completing","color":"dark_gray"},{"text":"the Crimson Room trial","color":"dark_gray"}]}},{Slot:20b,id:"minecraft:name_tag",count:4,components:{"minecraft:lore":[{"text":"A reward for completing","color":"dark_gray"},{"text":"the Crimson Room trial","color":"dark_gray"}]}},{Slot:21b,id:"minecraft:chainmail_helmet",count:1,components:{"minecraft:lore":[{"text":"A reward for completing","color":"dark_gray"},{"text":"the Crimson Room trial","color":"dark_gray"}]}},{Slot:22b,id:"minecraft:obsidian",count:32,components:{"minecraft:lore":[{"text":"A reward for completing","color":"dark_gray"},{"text":"the Crimson Room trial","color":"dark_gray"}]}},{Slot:23b,id:"minecraft:music_disc_chirp",count:1,components:{"minecraft:lore":[{"text":"A reward for completing","color":"dark_gray"},{"text":"the Crimson Room trial","color":"dark_gray"}]}},{Slot:24b,id:"minecraft:nether_quartz_ore",count:64,components:{"minecraft:lore":[{"text":"A reward for completing","color":"dark_gray"},{"text":"the Crimson Room trial","color":"dark_gray"}]}},{Slot:25b,id:"minecraft:red_glazed_terracotta",count:64,components:{"minecraft:lore":[{"text":"A reward for completing","color":"dark_gray"},{"text":"the Crimson Room trial","color":"dark_gray"}]}}]} replace
+
+# Spawn chest with key + ticket
+execute as @e[tag=crimson_candle_marker] at @s run setblock ~1 ~-1 ~-4 chest[facing=south]{Items:[{Slot:13b,id:"minecraft:tripwire_hook",count:1,components:{"minecraft:custom_name":{"text":"Crimson Key","color":"red"},"minecraft:lore":[{"text":"Can be used to escape","color":"dark_gray"},{"text":"the Crimson Room","color":"dark_gray"}],"minecraft:custom_data":{CrimsonKey:1b,CrimsonRoomNeedsReset:1b}}},{Slot:14b,id:"minecraft:paper",count:1,components:{"minecraft:custom_name":{"text":"Crimson Room Treasury Ticket","color":"dark_red","italic":false},"minecraft:lore":[{"text":"Redeem at the Treasury.","color":"gray","italic":false}],"minecraft:custom_data":{CrimsonRoomTicket:1b, TreasuryTicket:1b}}}]} replace
+
+# Lighter template
+#give @p flint_and_steel[custom_data={CrimsonRoomNeedsReset:1b}, can_place_on={blocks: ["minecraft:red_candle", "minecraft:blue_candle", "minecraft:green_candle", "minecraft:yellow_candle", "minecraft:purple_candle", "minecraft:soul_campfire"]}, custom_name={"text":"Lighter"}, lore=[{"text":"For lighting things on fire", "color":"dark_gray"}], tooltip_display={hidden_components:["can_place_on"]}]

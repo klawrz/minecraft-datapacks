@@ -1,0 +1,1 @@
+execute as @e[tag=origin__treasury] at @s run place template klawrz:pvp_hub/treasury/treasury ~ ~ ~

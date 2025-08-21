@@ -1,0 +1,1 @@
+function klawrz:scoreboard/init_scoreboard

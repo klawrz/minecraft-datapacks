@@ -1,0 +1,130 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [{
+        "type": "minecraft:item",
+        "name": "minecraft:emerald_ore",
+        "functions": [
+          { "function": "minecraft:set_count", "count": 16 },
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:lore": [
+              { "text": "A reward for completing", "color": "dark_gray" },
+              { "text": "the Viridian Room trial", "color": "dark_gray" }
+            ]
+          }}
+        ]
+      }]
+    },
+    {
+      "rolls": 1,
+      "entries": [{
+        "type": "minecraft:item",
+        "name": "minecraft:turtle_helmet",
+        "functions": [
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:lore": [
+              { "text": "A reward for completing", "color": "dark_gray" },
+              { "text": "the Viridian Room trial", "color": "dark_gray" }
+            ]
+          }}
+        ]
+      }]
+    },
+    {
+      "rolls": 1,
+      "entries": [{
+        "type": "minecraft:item",
+        "name": "minecraft:slime_ball",
+        "functions": [
+          { "function": "minecraft:set_count", "count": 48 },
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:lore": [
+              { "text": "A reward for completing", "color": "dark_gray" },
+              { "text": "the Viridian Room trial", "color": "dark_gray" }
+            ]
+          }}
+        ]
+      }]
+    },
+    {
+      "rolls": 1,
+      "entries": [{
+        "type": "minecraft:item",
+        "name": "minecraft:chainmail_leggings",
+        "functions": [
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:lore": [
+              { "text": "A reward for completing", "color": "dark_gray" },
+              { "text": "the Viridian Room trial", "color": "dark_gray" }
+            ]
+          }}
+        ]
+      }]
+    },
+    {
+      "rolls": 1,
+      "entries": [{
+        "type": "minecraft:item",
+        "name": "minecraft:tnt",
+        "functions": [
+          { "function": "minecraft:set_count", "count": 64 },
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:lore": [
+              { "text": "A reward for completing", "color": "dark_gray" },
+              { "text": "the Viridian Room trial", "color": "dark_gray" }
+            ]
+          }}
+        ]
+      }]
+    },
+    {
+      "rolls": 1,
+      "entries": [{
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_far",
+        "functions": [
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:lore": [
+              { "text": "A reward for completing", "color": "dark_gray" },
+              { "text": "the Viridian Room trial", "color": "dark_gray" }
+            ]
+          }}
+        ]
+      }]
+    },
+    {
+      "rolls": 1,
+      "entries": [{
+        "type": "minecraft:item",
+        "name": "minecraft:enchanted_book",
+        "functions": [
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:stored_enchantments": { "minecraft:fire_aspect": 2, "minecraft:infinity": 1 },
+            "minecraft:lore": [
+              { "text": "A reward for completing", "color": "dark_gray" },
+              { "text": "the Viridian Room trial", "color": "dark_gray" }
+            ]
+          }}
+        ]
+      }]
+    },
+    {
+      "rolls": 1,
+      "entries": [{
+        "type": "minecraft:item",
+        "name": "minecraft:green_glazed_terracotta",
+        "functions": [
+          { "function": "minecraft:set_count", "count": 64 },
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:lore": [
+              { "text": "A reward for completing", "color": "dark_gray" },
+              { "text": "the Viridian Room trial", "color": "dark_gray" }
+            ]
+          }}
+        ]
+      }]
+    }
+  ]
+}

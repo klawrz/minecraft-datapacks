@@ -1,0 +1,33 @@
+{
+  "values": [
+    "minecraft:red_candle",
+    "minecraft:blue_candle",
+    "minecraft:green_candle",
+    "minecraft:yellow_candle",
+    "minecraft:purple_candle",
+    "minecraft:tripwire_hook",
+    "minecraft:end_rod",
+    "minecraft:chorus_flower",
+    "minecraft:splash_potion",
+    "minecraft:allium",
+    "minecraft:poppy",
+    "minecraft:blue_orchid",
+    "minecraft:redstone",
+    "minecraft:sponge",
+    "minecraft:flint_and_steel",
+    "minecraft:blue_carpet",
+    "minecraft:moss_carpet",
+    "minecraft:bucket",
+    "minecraft:water_bucket",
+    "minecraft:salmon",
+    "minecraft:cooked_salmon",
+    "minecraft:bone_meal",
+    "minecraft:twisting_vines",
+    "minecraft:bow",
+    "minecraft:arrow",
+    "minecraft:golden_pickaxe",
+    "minecraft:amethyst_shard",
+    "minecraft:lead",
+    "minecraft:music_disc_11"
+  ]
+}
