@@ -7,6 +7,12 @@ https://en.wikipedia.org/wiki/Crimson_Room*
 
 ---
 
+### v1.0.1 Release Notes:
+
+Shoutout to yapsterb253 for identifying a few minor bugs while testing the datapack. Also added a note to the README to remind players that Peaceful difficulty will break the puzzle, so make sure to use Normal, Hard, or Hardcore!
+
+---
+
 ### v1.0.0 Relase Notes:
 
 Thanks for installing my datapack! The goal of this datapack is to provide players with a fun PVP environment, which includes a PVP Hub where players can gather and prepare for fights in the PVP Arena. To gear up, players can complete various intensely puzzling Trials and redeem rewards at the Treasury. 
@@ -23,9 +29,11 @@ Have fun!
 
 **DISCLAIMER: If you are adding this to a cherished world, consider doing a test run in a backup or a throwaway world to ensure you know what to expect when loading in content. Having to start over is a pain, and you don't want to ruin your village by accidentally spawning giant bedrock cubes above it**
 
+**DISCLAIMER 2: Some aspects of the puzzle will break if difficulty is set to Peaceful. Ensure difficulty is not set to Peaceful while attempting the challenge. Any other difficulty is valid**
+
 ## Step 1: Download Datapack
 
-- [Click here to start the download](https://github.com/klawrz/minecraft-datapacks/releases/download/v1.0.0/klawrz-datapack-v1.0.0.zip)
+- [Click here to start the download](https://github.com/klawrz/minecraft-datapacks/releases/download/v1.0.1/klawrz-datapack-v1.0.1.zip)
 - You should now have a folder called `klawrz-datapack-v1.0.0.zip` in your Downloads folder. Double click it to find the folder called `klawrz-datapack`
 - Copy this folder to your clipboard, or prepare to drag and drop it to another folder
 
