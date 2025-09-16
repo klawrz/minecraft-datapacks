@@ -1,6 +1,6 @@
 # Miscellaneous 
 scoreboard objectives add entities dummy
-scoreboard objectives add health dummy
+scoreboard objectives add health health
 scoreboard objectives add isTrue dummy
 scoreboard objectives add bool dummy
 

@@ -58,6 +58,7 @@ execute as @a[scores={challenge.exit=1..}] run function klawrz:challenges/challe
 
 
 
+
 #
 #
 # #
